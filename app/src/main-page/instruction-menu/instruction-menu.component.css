@@ -1,0 +1,97 @@
+
+
+.instruction-menu {
+  background-color: #D4F1F0;
+  padding: 10px;
+  max-width: 250px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: "Nunito", sans-serif;
+
+  /* Firefox - scrollbar inicialmente invisible */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* Mostrar scrollbar en Firefox cuando se interactúa */
+.instruction-menu:hover,
+.instruction-menu:focus-within,
+.instruction-menu:active {
+  scrollbar-color: #247b7b transparent;
+}
+
+/* Webkit browsers (Chrome, Edge, Safari) - scrollbar invisible por defecto */
+.instruction-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.instruction-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.instruction-menu::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Inicialmente transparente */
+}
+/* Mostrar scrollbar más pronunciado al hacer hover */
+.instruction-menu:hover::-webkit-scrollbar-thumb {
+  background-color: #0d5c63; /* Más visible */
+}
+
+/* Cuando se está scrolleando activamente */
+.instruction-menu::-webkit-scrollbar-thumb:active {
+  background-color: #0d5c63;
+}
+
+.menu-title {
+  color: #0d5c63;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative; /* Opcional: mantener el título visible al desplazarse */
+  top: 0;
+  padding: 5px 0;
+  z-index: 1;
+}
+
+.instruction-category {
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.category-summary {
+  background-color: #44a1a0;
+  color: #FFF;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+  font-size: .8rem;
+}
+
+.category-summary:hover {
+  background-color: #247b7b;
+}
+
+.instructions-list {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  max-height: 200px; /* Altura máxima para las listas de instrucciones */
+  overflow-y: auto; /* Barra de desplazamiento interna para listas largas */
+}
+
+
+.instruction-button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: #247b7b;
+  font-family: "Nunito", sans-serif;
+  transition: background-color 0.2s;
+}
+
+.instruction-button:hover {
+  background-color: #F8FFFF;
+}

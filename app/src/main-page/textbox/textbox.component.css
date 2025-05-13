@@ -1,0 +1,16 @@
+.textbox {
+    flex-shrink: 0;
+    border: 2px solid #0d5c63;
+    color: #0d5c63;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: "Nunito", sans-serif;
+}
+
+.input-assistant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

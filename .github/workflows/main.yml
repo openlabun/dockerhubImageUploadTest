@@ -30,7 +30,7 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/mipsconverteri:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/mipsconverteri:${{ github.sha }}
 
       # (Optional) 4. Verify push
       - name: List pushed images
