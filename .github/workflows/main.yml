@@ -1,0 +1,38 @@
+# .github/workflows/docker-publish.yml
+name: Build & Push Docker image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout your code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Log in to Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 3. Build & push
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/mipsconverteri:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/:${{ github.sha }}
+
+      # (Optional) 4. Verify push
+      - name: List pushed images
+        run: |
+          echo "Images pushed to Docker Hub under ${{ secrets.DOCKERHUB_USERNAME }}/mipsconverteri"
